@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+</head>
+
+<body>
+  <a-scene background="color:#CBF0FF">
+    <a-camera wasd-controls-enabled="false" position="-2 57 100" rotation="-48 -3 0"></a-camera>
+
+    <!-------------------------------------------Asset Management------------------------------------------->
+    <a-assets>      
+
+      <a-asset-item id="train-obj" src="./models/Train/tinker.obj"></a-asset-item>
+      <a-asset-item id="train-mtl" src="./models/Train/obj.mtl"></a-asset-item>
+
+      <a-asset-item id="table-obj" src="./models/Table/tinker.obj"></a-asset-item>
+      <a-asset-item id="table-mtl" src="./models/Table/obj.mtl"></a-asset-item>
+
+      
+    </a-assets>    
+    
+    <!-------------------------------------Table and Ground----------------------------------------------->
+    
+    <a-circle id="floor" position="-0.4 -100 -25" rotation="-90 0 0" radius="500" shadow="receive: true" visible="true" 
+    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAWlBMVEUAAAD////+/v4EBATQ0NCbm5vT09NUVFRXV1dRUVGWlpaenp739/f19fX5+fkbGxskJCQQEBAgICAXFxcmJiYTExNMTEzZ2dlubm6RkZG1tbXv7++np6cWFhYUct9TAAADw0lEQVR4nO3di3LaOhCAYVlKSQFZN5ukbZr3f83uCkLPATp1ljOhnP4aLrYIWT6vJDsz7MQFZ2sPgx/e3/ywNcZ7NMWT5hAiRIgQIUKECBEiRIgQIUKECBEiRIgQIUKECBEiRIgQIUKECBEiRIgQIUKECBEiRIgQIcK7EVraNUJbM8ZzbmU7ombhkzHe4Fa29vxlbWpPX59t8b492QKunfXQPBpzsTHGWxnjOaPQD58R/lJoW4MRIkSIECFChAgRIkSIECFChAgRIkSIECFChAgRIkSIECFChAgRIkSIECFChAiXCZeI71boxxjH9D8W+tGPLyktIN6rMPqX5OMYfz9O71aYdJCOC5J4jdBYxXAmDHVJtKDCY4tpHNNLjEvircyVIbYcnn9Xf5nw399k95LF5NOi08ez0efcJ2P7etqxec/7Ntv90/ft90+bRe88i7e0mY/Mac1MWpaKY83M7p3x1gvH1ln7T+qe4jjKLXk/yuOQ4th3tHuM/m1j3ynCVkoOOZfSZudKcfpQmvS2Lp/l5Qvx7HVP19eu+Rg7Kg5yl4mVZIWUZ51jchuHvqEHQXY1h1OoJbRQa51ryC24uVbdC1WIu+JqmC4Qb1id5/XCRFfF2GVetWqT7rG7BJ70pCC7cubbCkyMec45VxdaC6G9trLblVYln7ObSwvtjxIO6hqGvTDpRhcP6pWrFhmamt6o9xf5uW0VmAtZNDU7zWHNApqlt+Uq4qmF+UK8Wwo1QT2R/xT6PVx1x7sqD8KqwlLqUViOwtwuAW86SnX8pT4F+1V0H5upLzsx7XXyrPlLuu5sq8w8GZ15ehXdqVDm5Pyqv363O/lgt8yh75MsjsP+74TDSiMp69Z9/voI7ZcvW9dTNLs8ueLOhHmSNMpqk/PJ6eSmQn+YgkmXFU2i7snIVWefhzJcdcjq65LDfvET5pZLkCdRzmKe5yCjVj5MLtM0uzrtXv8coQ7UJOPveNbvNN3Us4W8oN1eZqYusP5YJXuQhp/32tMWqg7Q3ekVwa1ruf3bpNRN/9bj+1l6/3B4Tc6HpxEvfYLzvlsLl7Y7q1ZHiBAhQoQIESJEiBAhQoQIESJEiBAhQoQIESJEiBAhQoQIESJEiBDhXyS0tFsIre2j/7+F/bv6n21t/e3B1FabR1vALytbwAdzzczamAvrf3+w18yYahiG6yq7LBE/uu6JKlmECBEiRIgQIUKECBEiRIgQIUKECBEiRIgQIUKECBEiRIgQIUKECBEiRIgQIUKECBEiRPjxwmBpVwhN8UL4AXikrA0B434aAAAAAElFTkSuQmCC"
+    >
+  </a-circle>
+    <a-entity shadow="cast:ture; receive:true" obj-model="obj: #table-obj; mtl: #table-mtl" position="0 -60.7 37.5" rotation="-90 0 0" scale="3 7.5 3"></a-entity>
+    
+  <!-- Train -->
+    <a-entity position="0 0 0" animation="property: rotation; to: 0 360 0;easing:linear; loop: true; dur: 3000">
+        <a-entity id="train" obj-model="obj: #train-obj; mtl: #train-mtl" position="0 0 -50" rotation="-90 180 90" scale="0.1 0.1 0.1 " shadow="cast: true"></a-entity>
+    </a-entity>
+    
+
+
+    
+  </a-scene>
+</body>
+
+</html>
